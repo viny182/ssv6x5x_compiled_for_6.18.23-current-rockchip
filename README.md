@@ -6,7 +6,9 @@ Clone the Repo then:
 
 # 1. Install Firmware and Driver
 sudo cp ./ssv6x5x-wifi.cfg /lib/firmware/
+
 sudo cp ./ssv6x5x-sw.bin /lib/firmware/
+
 sudo cp ./ssv6x5x.ko /lib/modules/$(uname -r)/kernel/drivers/net/wireless/
 
 sudo depmod -a
@@ -15,7 +17,9 @@ sudo depmod -a
 echo 'options ssv6x5x stacfgpath="/lib/firmware/ssv6x5x-wifi.cfg" cfgfirmwarepath="/lib/firmware/ssv6x5x-sw.bin"' | sudo tee /etc/modprobe.d/ssv6x5x.conf
 
 sudo rmmod ssv6051 2>/dev/null
+
 sudo rmmod ssv6x5x 2>/dev/null
+
 sudo modprobe ssv6x5x
 
 # 3. Make it permanent
