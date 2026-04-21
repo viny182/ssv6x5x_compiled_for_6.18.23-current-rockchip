@@ -23,7 +23,10 @@ sudo rmmod ssv6x5x 2>/dev/null
 sudo modprobe ssv6x5x
 
 # 3. Make it permanent
-cat <<EOF > /etc/modprobe.d/armbian_ssv6x5x.conf blacklist ssv6051 ssv6x5x EOF
+cat <<EOF > armbian_ssv6x5x.conf
+blacklist ssv6051
+ssv6x5x
+EOF
 
 # 4. Reboot
 
